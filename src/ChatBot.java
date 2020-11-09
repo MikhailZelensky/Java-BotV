@@ -65,14 +65,16 @@ public class ChatBot {
                     return players.get(id).lastQuestion;
             case "/help":
                 return help;
-            case "/change part of speech":
+            case "/changepartofspeech":
                 players.get(id).lastQuestion = "";
                 players.get(id).theme = "";
                 players.get(id).partOfSpeech = "";
+                players.get(id).lastProgramMessage = "partOfSpeech";
                 return "Выберите часть речи:\n" + getChoose(partsOfSpeech);
-            case "/change theme":
+            case "/changetheme":
                 players.get(id).lastQuestion = "";
                 players.get(id).theme = "";
+                players.get(id).lastProgramMessage = "theme";
                 return "Выберите тему:\n" + getChoose(players.get(id).themes.keySet().toArray(String[]::new));
             default:
                 if (id.equals(""))
