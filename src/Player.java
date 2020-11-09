@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Player {
@@ -7,7 +8,9 @@ public class Player {
     String partOfSpeech;
     String theme;
     String lastProgramMessage;
-    HashMap<String, String> currentGloss;
+    ArrayList<String[]> currentGloss;
+    Integer lastNumber;
+    HashMap<String, ArrayList<String[]>> themes;
 
     Player(){
         this.point = 0;
@@ -16,6 +19,8 @@ public class Player {
         this.theme = "";
         this.partOfSpeech = "";
         this.lastProgramMessage = "";
-        this.currentGloss =
+        this.currentGloss = new ArrayList<>();
+        this.lastNumber = -1;
+        this.themes = new HashMap<>();
     }
 }
